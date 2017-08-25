@@ -1,0 +1,224 @@
+/* ____----____----____----____----____----____----____----____----____----
+   Base styles: HTML Elements
+   ____----____----____----____----____----____----____----____----____---- */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * highlight/selected text styles
+ */
+
+::-moz-selection {
+    background: #111;
+    color: #eee;
+    text-shadow: none;
+}
+
+::selection {
+    background: #111;
+    color: #eee;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #333;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ____----____----____----____----____----____----____----____----____----
+.___  ___.      ___           _______.___________. _______ .______                 _______.___________.____    ____  __       _______     _______.
+|   \/   |     /   \         /       |           ||   ____||   _  \               /       |           |\   \  /   / |  |     |   ____|   /       |
+|  \  /  |    /  ^  \       |   (----`---|  |----`|  |__   |  |_)  |             |   (----`---|  |----` \   \/   /  |  |     |  |__     |   (----`
+|  |\/|  |   /  /_\  \       \   \       |  |     |   __|  |      /               \   \       |  |       \_    _/   |  |     |   __|     \   \    
+|  |  |  |  /  _____  \  .----)   |      |  |     |  |____ |  |\  \----.      .----)   |      |  |         |  |     |  `----.|  |____.----)   |   
+|__|  |__| /__/     \__\ |_______/       |__|     |_______|| _| `._____| _____|_______/       |__|         |__|     |_______||_______|_______/    
+                                                                        |______|                                                                  
+   ____----____----____----____----____----____----____----____----____---- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ____----____----____----____----____----____----____----____----____----
+   Helper classes
+   ____----____----____----____----____----____----____----____----____---- */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ____----____----____----____----____----____----____----____----____----
+.______       _______     _______..______     ______   .__   __.      _______. __  ____    ____  _______                       
+|   _  \     |   ____|   /       ||   _  \   /  __  \  |  \ |  |     /       ||  | \   \  /   / |   ____|                      
+|  |_)  |    |  |__     |   (----`|  |_)  | |  |  |  | |   \|  |    |   (----`|  |  \   \/   /  |  |__                         
+|      /     |   __|     \   \    |   ___/  |  |  |  | |  . `  |     \   \    |  |   \      /   |   __|                        
+|  |\  \----.|  |____.----)   |   |  |      |  `--'  | |  |\   | .----)   |   |  |    \    /    |  |____                       
+| _| `._____||_______|_______/    | _|       \______/  |__| \__| |_______/    |__|     \__/     |_______|                      
+                                                                                                                               
+ _______   _______     _______. __    _______ .__   __.         _______.___________.____    ____  __       _______     _______.
+|       \ |   ____|   /       ||  |  /  _____||  \ |  |        /       |           |\   \  /   / |  |     |   ____|   /       |
+|  .--.  ||  |__     |   (----`|  | |  |  __  |   \|  |       |   (----`---|  |----` \   \/   /  |  |     |  |__     |   (----`
+|  |  |  ||   __|     \   \    |  | |  | |_ | |  . `  |        \   \       |  |       \_    _/   |  |     |   __|     \   \    
+|  '--'  ||  |____.----)   |   |  | |  |__| | |  |\   |    .----)   |      |  |         |  |     |  `----.|  |____.----)   |   
+|_______/ |_______|_______/    |__|  \______| |__| \__|    |_______/       |__|         |__|     |_______||_______|_______/    
+                                                                                                                               
+   Media Queries for Responsive Design/different screen sizes.
+   Code within media queries applies to the screen size defined by the media query
+   ____----____----____----____----____----____----____----____----____---- */
+   
+/* BEGIN min-width: 1777px (large screens) */
+@media only screen and (min-width: 1777px) {
+
+}
+/* END min-width: 1777px */
+
+
+/* BEGIN max-width: 720px (small screens) */
+@media only screen and (max-width: 720px) {
+}
+/* END max-width: 720px */
+
+
+/* BEGIN max-width: 540px (smaller screens) */
+@media only screen and (max-width: 540px) {
+
+}
+/* END max-width: 540px */
+
+
+/* BEGIN high resolution devices */
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+/* END high resolution devices */
+
+/* ____----____----____----____----____----____----____----____----____----
+   Print styles. (minified)
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ____----____----____----____----____----____----____----____----____---- */
+
+@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before,:first-letter,:first-line{background:0 0!important;color:#000!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}
