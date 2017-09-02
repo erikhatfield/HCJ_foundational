@@ -119,23 +119,34 @@ header:before{
 	border-color: transparent rgba(0,0,0,0.420) transparent transparent;
 
 }
-	header ol{
-		margin:0;
+	.navMenu{
+	
 	}
-		header ol>li{
-			display:block;
-			float:left;
+		.navMenu input {
+			position: absolute;
+			clip: rect(0, 0, 0, 0);
 		}
-			header ol>li>a{
+		.navMenu label  {
+			display:none;
+			cursor: pointer;
+		}
+		.navMenu ol{
+			margin:0;
+		}
+			.navMenu ol>li{
 				display:block;
-				padding:8px 12px;
-				line-height:34px;
-				background-color: rgba(0,0,0,0.33);
-				color:white;
+				float:left;
 			}
-			header ol>li>a:hover{
-				background-color: rgba(0,0,0,1);
-			}
+				.navMenu ol>li>a{
+					display:block;
+					padding:8px 12px;
+					line-height:34px;
+					background-color: rgba(0,0,0,0.33);
+					color:white;
+				}
+				.navMenu ol>li>a:hover{
+					background-color: rgba(0,0,0,1);
+				}
 #main{
 	position:relative;
 	display:block;
@@ -302,9 +313,73 @@ header{
 	width:100%;
 	
 }
-	header ol>li{
-			float:none;
+	.navMenu label{
+		display:block;
+		text-align:left;
+		font-size:14px;
+		text-transform:uppercase;
+		line-height:50px;
+		padding:0 50px;margin:0;
+		background:rgba(0,0,0,0.67);
+		color:#ddd;
+		cursor: pointer;
+	}
+	.navMenu label:hover{}
+	
+	.navMenu :checked ~ label {
+		background:rgba(255,255,255,0.777);
+		color:#aaa;
+	}
+	.navMenu :checked ~ label:hover{color:#777;}
+
+	.navMenu label:after {content: ' [+] ';
+		position:absolute;display:block;
+		top:0px;right:0px;width:40px;text-align:center;
+	}
+	.navMenu label:hover:after {color:lime;}
+	
+	.navMenu :checked ~ label:after {content: ' [-] ';}
+	.navMenu :checked ~ label:hover:after {color:maroon;}	
+	
+
+		.navMenu label>span{
+			position:absolute;display:block;
+			left:0;
+			background:#000;
+			color:#fff;
+			width:40px;
+			text-align:center;
+			font-family: Arial, sans-serif;
+			font-size:18px;
+			line-height:50px;
+			margin:0;
+			
 		}
+		.navMenu :checked ~ label>span {
+			background:#ddd;
+			color:#444;
+		}
+		
+		.navMenu label:hover>span{
+			background:#ccc;
+			color:#444;
+		}
+		.navMenu :checked ~ label:hover>span{
+			background:#444;
+			color:#ccc;
+		}
+		
+		.navMenu input ~ ol {
+			display: none;
+		}
+
+		.navMenu input:checked ~ ol {
+			display: block;
+		}
+			.navMenu ol>li{
+				float:none;
+			}
+
 
 }
 /* END max-width: 720px */
