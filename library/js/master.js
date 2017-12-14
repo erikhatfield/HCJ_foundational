@@ -6,7 +6,41 @@
 var firstOrderOfBSNS = (function(){
 
 	console.log("Javascript initiated: firstOrderOfBSNS();");
+		
+	/**
+	 ** Initializes app
+	 **/
+	function initialize() {
+		window.addEventListener('hashchange', onWindowHashChange, false);
+		
+		setActiveState();
+	}
 	
+	/**
+	 ** Event handling of window URL's 'hashchange'
+	 **/
+	function onWindowHashChange( event ) {
+		setActiveState();
+	}
+
+
+	/**
+	 ** Reads the current #hash in the URL and sets active class
+	 **/
+	function setActiveState() {
+		$("#main>section").removeClass("active");
+		$(location.hash).addClass("active");
+	}
+
+
+	/**
+	 ** Initialize the app logic, second to last step before returning 
+	 **/
+	initialize();
+
+	return {
+		
+	};
 })();
 
 /**
@@ -28,6 +62,6 @@ jQuery(document).ready(function() {
 window.onload = function() {
 
 	console.log("Browser window event: loaded!");
-	alert("Hello Internet");
+	//alert("Hello Internet");
 	
 };
