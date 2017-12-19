@@ -195,10 +195,11 @@ header:before{
 		}
 
 		.sectionBody{
-			position:relative;
 			display:block;
+			width:100%;
 			margin:0;
-			padding:44px 22px;
+			padding:22px 44px;
+			box-sizing: border-box;
 		}
 
 
@@ -259,6 +260,25 @@ $$ |  $$ |$$ |  $$ |$$ |$$ | $$ | $$ |\$$$$$$$ | \$$$$  |$$ |\$$$$$$  |$$ |  $$ 
 	
 	border:1px solid #000;
 	border-top:0;border-right:0;
+}
+/* 
+ * Vertically and horizontally centers child elements of 
+ * unknown width and height
+ */
+.valign {
+	height: 100%;
+	text-align:center;
+}
+.valign:before {
+	content: '';
+	display: inline-block;
+	height: 100%; 
+	vertical-align: middle;
+}
+.valigninner {
+	display: inline-block;
+	vertical-align: middle;
+	text-align:left;
 }
 /*
  * Hide visually and from screen readers
