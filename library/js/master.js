@@ -1,21 +1,25 @@
-/* __  \ (  ____ \|\     /|(  ____ \( \        (  ___  )(  ____ )(  ____ \
-| (  \  )| (    \/| )   ( || (    \/| (        | (   ) || (    )|| (    \/
-| |   ) || (__    | |   | || (__    | |        | |   | || (____)|| (_____ 
-| |   | ||  __)   ( (   ) )|  EH)   | |        | |   | || 052518)(_____  )
-| |   ) || (       \ \_/ / | (      | |        | |   | || (            ) |
-| (__/  )| (____/\  \   /  | (____/\| (____/\  | (___) || )      /\____) |
-(______/ (_______/   \_/   (_______/(_______/  (_______)|/       \______*/
+/*░░    ░░░  ░░░░░  ░░░░░░░ ░░░░░░░░ ░░░░░░░ ░░░░░░   092021 EH ░░░░░░░
+▒▒▒▒▒  ▒▒▒▒ ▒▒   ▒▒ ▒▒         ▒▒    ▒▒      ▒▒   ▒▒         ▒▒ ▒▒
+▒▒▒ ▒▒▒▒ ▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒    ▒▒    ▒▒▒▒▒   ▒▒▒▒▒▒          ▒▒ ▒▒▒▒▒▒▒
+▓▓▓  ▓▓  ▓▓ ▓▓   ▓▓      ▓▓    ▓▓    ▓▓      ▓▓   ▓▓    ▓▓   ▓▓      ▓▓
+███      ██ ██   ██ ███████    ██    ███████ ██   ██ ██  █████  ██████*/
+var initTime, docReadyTime, onloadTime;
 /**
- ** BROWSER PAGE EVENT CHAIN **
+ ** BROWSER PAGE EVENT CHAIN [part 1]**
  **
- ** firstOrderOfBSNS is a self-calling function that fires before document ready **
+ ** firstOrderOfBSNS is a self-calling function that fires before document ready (event) **
 **/
 var firstOrderOfBSNS = (function(){
 
-	console.log("Javascript initiated: firstOrderOfBSNS();");
+	/**
+	 ** save initial time stamp
+	 ** getTime() returns the number of milliseconds since 010170
+	 **/
+	initTime = new Date().getTime();
+	console.log("Clock started: firstOrderOfBSNS();");
 		
 	/**
-	 ** Initializes app
+	 ** Initializes app logic
 	 **/
 	function initialize() {
 		window.addEventListener('hashchange', onWindowHashChange, false);
@@ -51,24 +55,31 @@ var firstOrderOfBSNS = (function(){
 })();
 
 /**
- ** BROWSER PAGE EVENT CHAIN **
+ ** BROWSER PAGE EVENT CHAIN [part 2]**
  **
  ** jQuery(document).ready is an event that fires when the page is 'ready', after self-calling functions and before the browser window's load event. **
 **/
 jQuery(document).ready(function() {
-	
-	console.log("jQuery event: document ready!");
-	
+	/**
+	 ** save new time stamp
+	 **/
+	docReadyTime = new Date().getTime();
+	console.log("jQuery event: document is ready, "+(docReadyTime - initTime)+" milisec since init.");
+
+	//alert("Hello Internet");
 });
 
 /**
- ** BROWSER PAGE EVENT CHAIN **
+ ** BROWSER PAGE EVENT CHAIN [part 3]**
  **
  ** window.onload is an event that fires when the page is completely loaded, after the jQuery(document).ready event. **
 **/
 window.onload = function() {
 
-	console.log("Browser window event: loaded!");
-	//alert("Hello Internet");
+	/**
+	 ** save onload time stamp
+	 **/
+	onloadTime = new Date().getTime();
+	console.log("Browser event: window is loaded, "+(onloadTime - initTime)+" milisec since init.");
 	
 };
