@@ -19,5 +19,5 @@ Add HTML, CSS, or Javascript to learn more about best practices of the standard 
 
 :+1:
 Syntax and formatting for an .MD file from Github Documentation: [GitHub basic-writing-and-formatting-syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/) and emojii codes from [Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
-[ASCII Art in stylesheet generator](http://patorjk.com/software/taag/)
+[ASCII Art in stylesheet generator](https://texteditor.com/multiline-text-art)
 ***Side note:** I included an MIT license, because it sounded appropriate given the academic leanings of this project, but to be honest, I am not that familiar with it. * :innocent:
