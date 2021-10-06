@@ -1,4 +1,4 @@
-/*░░    ░░░  ░░░░░  ░░░░░░░ ░░░░░░░░ ░░░░░░░ ░░░░░░   092021 EH ░░░░░░░
+/*░░    ░░░  ░░░░░  ░░░░░░░ ░░░░░░░░ ░░░░░░░ ░░░░░░   100621 EH ░░░░░░░
 ▒▒▒▒▒  ▒▒▒▒ ▒▒   ▒▒ ▒▒         ▒▒    ▒▒      ▒▒   ▒▒         ▒▒ ▒▒
 ▒▒▒ ▒▒▒▒ ▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒    ▒▒    ▒▒▒▒▒   ▒▒▒▒▒▒          ▒▒ ▒▒▒▒▒▒▒
 ▓▓▓  ▓▓  ▓▓ ▓▓   ▓▓      ▓▓    ▓▓    ▓▓      ▓▓   ▓▓    ▓▓   ▓▓      ▓▓
@@ -17,16 +17,16 @@ var firstOrderOfBSNS = (function(){
 	 **/
 	initTime = new Date().getTime();
 	console.log("Clock started: firstOrderOfBSNS();");
-		
+
 	/**
 	 ** Initializes app logic
 	 **/
 	function initialize() {
 		window.addEventListener('hashchange', onWindowHashChange, false);
-		
+
 		setActiveState();
 	}
-	
+
 	/**
 	 ** Event handling of window URL's 'hashchange'
 	 **/
@@ -39,35 +39,44 @@ var firstOrderOfBSNS = (function(){
 	 ** Reads the current #hash in the URL and sets active class
 	 **/
 	function setActiveState() {
-		$("#main>section").removeClass("active");
-		$(location.hash).addClass("active");
+//document.getElementById("main");
+		document.querySelector("#main>section").classList.remove("active");
+    if(location.hash == ""){
+      location.hash = "home"
+    }
+		document.querySelector(location.hash).classList.add("active");
 	}
 
 
 	/**
-	 ** Initialize the app logic, second to last step before returning 
+	 ** Initialize the app logic, second to last step before returning
 	 **/
 	initialize();
 
 	return {
-		
+
 	};
 })();
 
 /**
  ** BROWSER PAGE EVENT CHAIN [part 2]**
  **
- ** jQuery(document).ready is an event that fires when the page is 'ready', after self-calling functions and before the browser window's load event. **
+ ** dom ready is an event that fires when the page is 'ready', after self-calling functions and before the loaded event. **
 **/
-jQuery(document).ready(function() {
-	/**
+function ready(callbackFunction){
+  if(document.readyState != 'loading')
+    callbackFunction(event)
+  else
+    document.addEventListener("DOMContentLoaded", callbackFunction)
+}
+ready(event => {
+  /**
 	 ** save new time stamp
 	 **/
 	docReadyTime = new Date().getTime();
-	console.log("jQuery event: document is ready, "+(docReadyTime - initTime)+" milisec since init.");
+	console.log("event: document is ready, "+(docReadyTime - initTime)+" milisec since init.");
 
-	//alert("Hello Internet");
-});
+})
 
 /**
  ** BROWSER PAGE EVENT CHAIN [part 3]**
@@ -80,6 +89,6 @@ window.onload = function() {
 	 ** save onload time stamp
 	 **/
 	onloadTime = new Date().getTime();
-	console.log("Browser event: window is loaded, "+(onloadTime - initTime)+" milisec since init.");
-	
+	console.log("event: window is loaded, "+(onloadTime - initTime)+" milisec since init.");
+
 };
