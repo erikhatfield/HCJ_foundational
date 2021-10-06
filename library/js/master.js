@@ -39,7 +39,7 @@ var firstOrderOfBSNS = (function(){
 	 ** Reads the current #hash in the URL and sets active class
 	 **/
 	function setActiveState() {
-//document.getElementById("main");
+    //document.getElementById("main");
 		document.querySelector("#main>section").classList.remove("active");
     if(location.hash == ""){
       location.hash = "home"
@@ -69,13 +69,13 @@ function ready(callbackFunction){
   else
     document.addEventListener("DOMContentLoaded", callbackFunction)
 }
+
 ready(event => {
   /**
 	 ** save new time stamp
 	 **/
 	docReadyTime = new Date().getTime();
 	console.log("event: document is ready, "+(docReadyTime - initTime)+" milisec since init.");
-
 })
 
 /**
@@ -84,7 +84,6 @@ ready(event => {
  ** window.onload is an event that fires when the page is completely loaded, after the jQuery(document).ready event. **
 **/
 window.onload = function() {
-
 	/**
 	 ** save onload time stamp
 	 **/
