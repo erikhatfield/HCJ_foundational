@@ -6,7 +6,7 @@
 This project is a starter kit for initializing a web page coding project. Starting with the foundation building blocks:
 1. HTML
 2. CSS
-3. Javascript (with jQuery)
+3. Javascript
 
 ### Why the project is useful
 This project has three intended goals:
