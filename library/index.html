@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>† Horizon † Light †</title>
+    <style>
+        /* Global Layout */
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background: #cecccc;
+            background: -webkit-linear-gradient(top, #feffff, #cecccc);
+            background: linear-gradient(to bottom, #feffff, #cecccc);
+            box-shadow: inset 0 0 150px rgba(0, 0, 0, 0);
+        }
+
+        /* Horizon Perspective Container */
+        .horizonContainer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            -webkit-perspective: 200px;
+            perspective: 200px;
+        }
+
+        .horizon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: -50px;
+            -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+        }
+
+        /* Vector Lines Base */
+        .vect {
+            position: absolute;
+            background: rgba(144, 144, 144, 0.86);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Vertical Lines */
+        .vertical .vect {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            background: -webkit-linear-gradient(top, rgba(144, 144, 144, 0), rgba(144, 144, 144, 0.86));
+            background: linear-gradient(to bottom, rgba(144, 144, 144, 0), rgba(144, 144, 144, 0.86));
+        }
+
+        .vertical .vect:nth-child(1)  { left: 10%; }
+        .vertical .vect:nth-child(2)  { left: 20%; }
+        .vertical .vect:nth-child(3)  { left: 30%; }
+        .vertical .vect:nth-child(4)  { left: 40%; }
+        .vertical .vect:nth-child(5)  { left: 50%; }
+        .vertical .vect:nth-child(6)  { left: 60%; }
+        .vertical .vect:nth-child(7)  { left: 70%; }
+        .vertical .vect:nth-child(8)  { left: 80%; }
+        .vertical .vect:nth-child(9)  { left: 90%; }
+        .vertical .vect:nth-child(10) { left: 100%; margin-left: -1px; }
+
+        /* Horizontal Lines */
+        .horizontal .vect {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            z-index: 2;
+        }
+
+        .horizontal .vect:nth-child(1)  { top: 10%; opacity: 0.20; }
+        .horizontal .vect:nth-child(2)  { top: 20%; opacity: 0.30; }
+        .horizontal .vect:nth-child(3)  { top: 30%; opacity: 0.40; }
+        .horizontal .vect:nth-child(4)  { top: 40%; opacity: 0.50; }
+        .horizontal .vect:nth-child(5)  { top: 50%; opacity: 0.60; }
+        .horizontal .vect:nth-child(6)  { top: 60%; opacity: 0.70; }
+        .horizontal .vect:nth-child(7)  { top: 70%; opacity: 0.80; }
+        .horizontal .vect:nth-child(8)  { top: 80%; opacity: 0.90; }
+        .horizontal .vect:nth-child(9)  { top: 90%; opacity: 0.95; }
+        .horizontal .vect:nth-child(10) { top: 100%; margin-top: -1px; opacity: 1; }
+        .horizontal .vect:nth-child(11) { opacity: 0.05; }
+
+        /* Animated Dots (Bae) */
+        .bae {
+            position: absolute;
+            background: #666666;
+            width: 5px;
+            height: 5px;
+            top: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 3px #FFF;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .bae:nth-child(1) { left: 10%; -webkit-animation: seekBae 5s infinite; animation: seekBae 5s infinite; }
+        .bae:nth-child(2) { left: 20%; -webkit-animation: seekBae 20s infinite; animation: seekBae 20s infinite; }
+        .bae:nth-child(3) { left: 30%; -webkit-animation: seekBae 15s infinite; animation: seekBae 15s infinite; }
+        .bae:nth-child(4) { left: 50%; -webkit-animation: seekBae 30s infinite; animation: seekBae 30s infinite; }
+        .bae:nth-child(5) { left: 60%; -webkit-animation: seekBae 12s infinite; animation: seekBae 12s infinite; }
+        .bae:nth-child(6) { left: 80%; -webkit-animation: seekBae 6s infinite; animation: seekBae 6s infinite; }
+        .bae:nth-child(7) { left: 90%; -webkit-animation: seekBae 8s infinite; animation: seekBae 8s infinite; }
+
+        /* Animation Keyframes */
+        @-webkit-keyframes seekBae {
+            0%   { top: 100%; opacity: 1; }
+            100% { top: 0%;   opacity: 0; }
+        }
+
+        @keyframes seekBae {
+            0%   { top: 100%; opacity: 1; }
+            100% { top: 0%;   opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="horizonContainer">
+        <div class="horizon">
+            <!-- Vertical Grid Lines -->
+            <div class="vertical">
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+            </div>
+
+            <!-- Animated Rising Dots -->
+            <div class="animationGroup">
+                <div class="bae"></div>
+                <div class="bae"></div>
+                <div class="bae"></div>
+                <div class="bae"></div>
+                <div class="bae"></div>
+                <div class="bae"></div>
+                <div class="bae"></div>
+            </div>
+
+            <!-- Horizontal Grid Lines -->
+            <div class="horizontal">
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+                <div class="vect"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContainer">
+        <!-- Main content goes here -->
+    </div>
+
+</body>
+</html>
